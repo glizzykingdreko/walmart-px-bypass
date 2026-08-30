@@ -1,0 +1,28 @@
+{
+  "input": {
+    "cartId": null,
+    "strategy": "MERGE",
+    "enableLiquorBox": false,
+    "enableCartSplitClarity": true,
+    "features": [
+      "lmpdel"
+    ]
+  },
+  "detailed": true,
+  "includePartialFulfillmentSwitching": true,
+  "enableAEBadge": true,
+  "includeExpressSla": true,
+  "includeQueueing": true,
+  "enableCartBookslotShortcut": true,
+  "enableACCScheduling": true,
+  "enableWalmartPlusFreeDiscountedExpress": true,
+  "enableDiscountedOrHolidayExpress": true,
+  "enableBenefitSavings": false,
+  "enableUnifiedBadges": true,
+  "enableCartLevelMSI": false,
+  "enablePickupNotAvailable": true,
+  "enableReturnsLabel": false,
+  "enableStarRatings": false,
+  "enableMsiMci": true,
+  "enableExpressAvailability": true
+}

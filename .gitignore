@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+
+.venv/
+venv/
+
+# Secrets and pool. Both have a committed .example alongside them.
+.env
+proxies.txt
+
+# Unrelated scratch.
+t.py
+
+# Local run output.
+*.log
+
+.DS_Store
+.idea/
+.vscode/

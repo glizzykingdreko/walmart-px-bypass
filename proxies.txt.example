@@ -1,0 +1,7 @@
+# Copy to proxies.txt, one proxy per line. Both formats work:
+#
+#   host:port
+#   host:port:user:pass
+#
+# The examples pick one at random per run. The pxhc examples rotate through
+# up to five before giving up, because not every proxy earns a PX block.
