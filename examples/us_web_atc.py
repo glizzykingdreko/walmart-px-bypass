@@ -13,10 +13,10 @@ from takion.common import (
 from takion.result import FAIL, PASS
 
 APP_ID = "PXu6b0qd2S"
-PLATFORM_VERSION = "usweb-1.287.0-79c0eccc1a01e37a22d42b25f3169b6a09a30cb7-7201858r"
+PLATFORM_VERSION = "usweb-1.327.6-09c9b600c16cbc6083e40664a1fb71343429742f-N71544r"
 
 # Persisted-query hashes, re-pull these on a PersistedQueryNotFound.
-H_UPDATE_ITEMS = "1322d66f01ae3a81d96c49f7f30e4265fca896de10c3d6cf62629844157531e7"
+H_UPDATE_ITEMS = "b30082a02ec068e0351926fabd248b52f51b18e4d66d3205900ad3959fee6360"
 H_GET_CART = "053d0c921c278a58cdf9c0df84fd0afff3ed2f7942e0c5212092dcdadce7ba62"
 
 PRODUCT = {
@@ -38,13 +38,13 @@ PAYLOAD_FILE = os.path.join(ROOT, "examples", "payloads", "us_update_items.json"
 
 NAV_HEADERS = {
     "upgrade-insecure-requests": "1",
-    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
     "sec-fetch-site": "none",
     "sec-fetch-mode": "navigate",
     "sec-fetch-user": "?1",
     "sec-fetch-dest": "document",
-    "sec-ch-ua": '"Google Chrome";v="147", "Not.A/Brand";v="8", "Chromium";v="147"',
+    "sec-ch-ua": '"Not-A.Brand";v="99", "Google Chrome";v="157", "Chromium";v="157"',
     "sec-ch-ua-mobile": "?0",
     "sec-ch-ua-platform": '"macOS"',
     "accept-language": "en-US",
@@ -57,7 +57,7 @@ def gql_headers(op: str, kind: str) -> dict:
         "x-o-gql-query": f"{kind} {op}",
         "sec-ch-ua-platform": '"macOS"',
         "x-o-segment": "oaoh",
-        "sec-ch-ua": '"Google Chrome";v="147", "Not.A/Brand";v="8", "Chromium";v="147"',
+        "sec-ch-ua": '"Not-A.Brand";v="99", "Google Chrome";v="157", "Chromium";v="157"',
         "x-enable-server-timing": "1",
         "sec-ch-ua-mobile": "?0",
         "wm_mp": "true",
@@ -70,7 +70,7 @@ def gql_headers(op: str, kind: str) -> dict:
         "accept-language": "en-US",
         "x-o-ccm": "server",
         "x-o-bu": "WALMART-US",
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
         "wm_page_url": PAGE_URL,
         "origin": "https://www.walmart.com",
         "sec-fetch-site": "same-origin",
@@ -101,7 +101,7 @@ def main() -> int:
     solver, px, _ = solve_with_retry(
         lambda proxy: TakionPxWeb(key, proxy),
         lambda client: client.generate_px_session(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
             app_id=APP_ID,
             page_url=PAGE_URL,
         ),
@@ -118,7 +118,7 @@ def main() -> int:
     solver.get(
         "https://www.walmart.com/orchestra/api/ccm/v3/bootstrap?configNames=account,shared,cart",
         {
-            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
             "accept": "application/json",
             "x-o-platform": "rweb",
             "x-o-bu": "WALMART-US",

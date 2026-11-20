@@ -149,6 +149,8 @@ REGISTRY = [
             needs=["WALMART_EMAIL"]),
     Example("us_mobile_signin", "US mobile, sign in (password)", ["us", "mobile", "init"],
             needs=["WALMART_EMAIL", "WALMART_PASSWORD"]),
+    Example("us_web_password_signin", "US web, sign in (password)", ["us", "web", "init"],
+            needs=["WALMART_EMAIL", "WALMART_PASSWORD"]),
     Example("ca_web_atc", "CA web, add to cart", ["ca", "web", "init"]),
     Example("ca_web_account_create", "CA web, create an account", ["ca", "web", "init"]),
     Example("pxhc_us_web", "pxhc, www.walmart.com", ["us", "web", "pxhc"],

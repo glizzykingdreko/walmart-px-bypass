@@ -81,14 +81,14 @@ class TakionPxWeb:
         return resp
 
     def set_session_cookies(self, cookies: dict, domain: str) -> dict:
-        return self._post("/extra/tls/set_cookies", {
+        return self._post("/tls/set_cookies", {
             "session_id": self.session_id,
             "cookies": cookies,
             "domain": domain,
         })
 
     def initialize_walmart_session(self, login_url: str, user_agent: str = None) -> dict:
-        return self._post("/extra/tls/initialize_walmart", {
+        return self._post("/tls/initialize_walmart", {
             "session_id": self.session_id,
             "login_url": login_url,
             "user_agent": user_agent,

@@ -20,18 +20,18 @@ from takion.result import PASS
 APP_ID = "PXu6b0qd2S"
 CLIENT_ID = "5f3fb121-076a-45f6-9587-249f0bc160ff"
 TENANT_ID = "elh9ie"
-FALLBACK_PLATFORM = "usweb-1.282.0-de2b126a4b6420df1d3b23b1c21d6424704cfb48-7071527r"
+FALLBACK_PLATFORM = "usweb-1.327.6-09c9b600c16cbc6083e40664a1fb71343429742f-N71544r"
 TEMPO_TARGETING = "%7B%22identityClientTarget%22%3A%225f3fb121-076a-45f6-9587-249f0bc160ff%22%7D"
 
 NAV_HEADERS = {
     "upgrade-insecure-requests": "1",
-    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
     "sec-fetch-site": "none",
     "sec-fetch-mode": "navigate",
     "sec-fetch-user": "?1",
     "sec-fetch-dest": "document",
-    "sec-ch-ua": '"Google Chrome";v="147", "Not.A/Brand";v="8", "Chromium";v="147"',
+    "sec-ch-ua": '"Not-A.Brand";v="99", "Google Chrome";v="157", "Chromium";v="157"',
     "sec-ch-ua-mobile": "?0",
     "sec-ch-ua-platform": '"macOS"',
     "accept-language": "en-US",
@@ -89,7 +89,7 @@ def gql(solver, query, variables, page_url, platform_version, ref):
         "x-o-mart": "B2C",
         "sec-ch-ua-platform": '"macOS"',
         "x-o-segment": "oaoh",
-        "sec-ch-ua": '"Google Chrome";v="147", "Not.A/Brand";v="8", "Chromium";v="147"',
+        "sec-ch-ua": '"Not-A.Brand";v="99", "Google Chrome";v="157", "Chromium";v="157"',
         "x-enable-server-timing": "1",
         "sec-ch-ua-mobile": "?0",
         "x-latency-trace": "1",
@@ -109,7 +109,7 @@ def gql(solver, query, variables, page_url, platform_version, ref):
         "sec-fetch-mode": "cors",
         "sec-fetch-dest": "empty",
         "priority": "u=1, i",
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
         "x-o-gql-query": f"{kind} {op}",
         "x-apollo-operation-name": op,
         "device_profile_ref_id": ref,
@@ -141,7 +141,7 @@ def main() -> int:
     solver, px, _ = solve_with_retry(
         lambda proxy: TakionPxWeb(key, proxy),
         lambda client: client.generate_px_session(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
             app_id=APP_ID,
             page_url="https://www.walmart.com/",
         ),
@@ -156,10 +156,10 @@ def main() -> int:
     platform_version = find_platform_version(homepage.text or "", "usweb-", FALLBACK_PLATFORM)
 
     xhr_headers = {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
         "accept": "*/*",
         "accept-language": "en-US",
-        "sec-ch-ua": '"Google Chrome";v="147", "Not.A/Brand";v="8", "Chromium";v="147"',
+        "sec-ch-ua": '"Not-A.Brand";v="99", "Google Chrome";v="157", "Chromium";v="157"',
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": '"macOS"',
         "sec-fetch-site": "same-origin",
